@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: finance_app
+  host: localhost
+  username: serg
+  password: 'hot3Zoot'
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: finance_app_test
+  host: localhost
+  username: serg
+  password: 'hot3Zoot'

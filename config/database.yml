@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: finance_app
+  database: finance_app_development
   host: localhost
   username: serg
   password: 'hot3Zoot'

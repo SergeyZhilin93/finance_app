@@ -1,0 +1,58 @@
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.add-category {
+  display: flex;
+  justify-content: space-between;
+}
+.add-category-new {
+  display: flex;
+  align-items: center;
+  &__title {
+    margin: 0 10px 0 0;
+  }
+  &__icon {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.record {
+  display: flex;
+  justify-content: space-between;
+  &__name:before {
+    content: '-';
+    margin-right: 5px;
+  }
+}
+
+.record-buttons {
+  display: flex;
+  align-items: center;
+  &__icon {
+    margin: 0 0 0 10px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+.payment-btn {
+  margin-left: 10px;
+}
+
+.income-btn {
+  margin-left: 10px;
+}
+
+.submit {
+  margin-left: 10px;
+}
+
+.payments {
+  margin-bottom: 70px;
+}
+.hidden {
+  display: none;
+}

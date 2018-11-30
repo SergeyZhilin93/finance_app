@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'category/settings'
 
-  resources :category
+  resources :category do
+    collection do
+      get :settings
+    end
+  end
 
   root 'category#settings'
 

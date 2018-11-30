@@ -1,51 +1,38 @@
-.container
+.settings-container
   .payments
     .add-category
-      p Payments categories
+      p = t('.payment_title')
       .add-category-new
-        p.add-category-new__title Add new
+        p.add-category-new__title = t('.add_new')
 
         p.add-category-new__icon.fa.fa-plus-square.fa-lg.js-add-payment
     .payments-form.hidden
-      = form_with(url: category_index_path, method: "POST")  do
+      = form_for @category, url: category_index_path do |f|
         .field
-          = text_field_tag(:name)
-          = hidden_field_tag(:category_type, "payment")
-          = submit_tag("Add", class: "submit")
-    form.edit-payment.hidden action=""
-      input.payment-name name ='name'
-      button.payment-btn Create
+          = f.text_field(:name)
+          = f.hidden_field :category_type, { :value => "payment" }
+          = f.submit("#{t('.submit')}", class: "submit")
 
-
-
-    - payments.each do |payment|
-      .record data-id="#{payment.id}"
-        p.record__name data-name="#{payment.name}" = payment.name
-        .record-buttons
-          p.record-buttons__icon.fa.fa-pencil.fa-lg.js-edit-payment
-          = link_to '', category_path(payment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'record-buttons__icon fa fa-trash fa-lg'
+    - @payments.find_each do |payment|
+      = render partial: 'categories/record', locals: {record: payment}
+    .pagination-container
+      = paginate @payments, param_name: :payments_page
 
   .incomes
     .add-category
-      p Incomes categories
+      p = t('.income_title')
       .add-category-new
-        p.add-category-new__title Add new
+        p.add-category-new__title = t('.add_new')
 
         p.add-category-new__icon.fa.fa-plus-square.fa-lg.js-add-income
     .incomes-form.hidden
-      = form_with(url: category_index_path, method: "POST") do
+      = form_for @category, url: category_index_path do |f|
         .field
-          = text_field_tag(:name)
-          = hidden_field_tag(:category_type, "income")
-          = submit_tag("Add", class: "submit")
-    form.edit-income.hidden action=""
-      input.income-name name ='name'
-      button.income-btn Create
+          = f.text_field(:name)
+          = f.hidden_field :category_type, { :value => "income" }
+          = f.submit("#{t('.submit')}", class: "submit")
 
-    - incomes.each do |income|
-      .record data-id="#{income.id}"
-        p.record__name data-name="#{income.name}" = income.name
-        .record-buttons
-          p.record-buttons__icon.fa.fa-pencil.fa-lg.js-edit-income
-          = link_to '', category_path(income), method: :delete, data: { confirm: 'Are you sure?' }, class: 'record-buttons__icon fa fa-trash fa-lg'
-
+    - @incomes.find_each do |income|
+      = render partial: 'categories/record', locals: {record: income}
+    .pagination-container
+      = paginate @incomes, param_name: :incomes_page

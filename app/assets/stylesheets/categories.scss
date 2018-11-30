@@ -1,6 +1,6 @@
-.container {
+.settings-container {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .add-category {
@@ -22,20 +22,30 @@
 .record {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__name:before {
     content: '-';
     margin-right: 5px;
+  }
+  &__name {
+    margin: 10px 0 10px 0;
   }
 }
 
 .record-buttons {
   display: flex;
   align-items: center;
+  cursor: pointer;
   &__icon {
     margin: 0 0 0 10px;
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    color: black !important;
+    text-decoration: none !important;
+
   }
 }
 .payment-btn {
@@ -55,4 +65,9 @@
 }
 .hidden {
   display: none;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
 }

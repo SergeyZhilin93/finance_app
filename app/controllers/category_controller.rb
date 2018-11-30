@@ -1,5 +1,5 @@
 class CategoryController < ApplicationController
-  before_action :set_category, only: [:update, :destroy ]
+  before_action :set_category, only: [:update, :destroy]
 
   def index
     @categories = Category.all
@@ -27,10 +27,14 @@ class CategoryController < ApplicationController
   def update
     @category.update_attributes(category_params)
     @category.save
+    redirect_to root_path
   end
 
   def settings
-    render 'categories/settings', locals: { payments: Category.payments, incomes: Category.incomes }
+    @payments = Category.payments.order(:name).page(params[:payments_page])
+    @incomes = Category.incomes.order(:name).page(params[:incomes_page])
+    @category = Category.new()
+    render 'categories/settings'
   end
 
   def destroy
@@ -44,7 +48,7 @@ class CategoryController < ApplicationController
   private
 
   def set_category
-    @category = Category.find(params[:id])
+    @category = Category.find_by(id: params[:id])
   end
 
   def category_params

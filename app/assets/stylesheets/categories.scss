@@ -1,0 +1,73 @@
+.settings-container {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.add-category {
+  display: flex;
+  justify-content: space-between;
+}
+.add-category-new {
+  display: flex;
+  align-items: center;
+  &__title {
+    margin: 0 10px 0 0;
+  }
+  &__icon {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.record {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__name:before {
+    content: '-';
+    margin-right: 5px;
+  }
+  &__name {
+    margin: 10px 0 10px 0;
+  }
+}
+
+.record-buttons {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &__icon {
+    margin: 0 0 0 10px;
+    color: black !important;
+    text-decoration: none !important;
+
+  }
+}
+.payment-btn {
+  margin-left: 10px;
+}
+
+.income-btn {
+  margin-left: 10px;
+}
+
+.submit {
+  margin-left: 10px;
+}
+
+.payments {
+  margin-bottom: 70px;
+}
+.hidden {
+  display: none;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+}

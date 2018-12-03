@@ -1,0 +1,11 @@
+.record
+  .record__text
+    p.record__name = record.name
+    .record-buttons
+      p.record-buttons__icon.fa.fa-pencil.fa-lg.js-edit-record
+      = link_to '', category_path(record), method: :delete, data: { confirm: "#{t('.confirm')}" }, class: 'record-buttons__icon fa fa-trash fa-lg'
+
+  = form_for record, url: category_path(record), method: :put, html: { class: 'edit-record-form hidden' } do |f|
+    .field
+      = f.text_field(:name)
+      = f.submit("#{t('.button')}", class: "submit")

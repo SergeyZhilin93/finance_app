@@ -1,0 +1,38 @@
+.settings-container
+  .payments
+    .add-category
+      p = t('.payment_title')
+      .add-category-new
+        p.add-category-new__title = t('.add_new')
+
+        p.add-category-new__icon.fa.fa-plus-square.fa-lg.js-add-payment
+    .payments-form.hidden
+      = form_for @category, url: category_index_path do |f|
+        .field
+          = f.text_field(:name)
+          = f.hidden_field :category_type, { :value => "payment" }
+          = f.submit("#{t('.submit')}", class: "submit")
+
+    - @payments.find_each do |payment|
+      = render partial: 'categories/record', locals: {record: payment}
+    .pagination-container
+      = paginate @payments, param_name: :payments_page
+
+  .incomes
+    .add-category
+      p = t('.income_title')
+      .add-category-new
+        p.add-category-new__title = t('.add_new')
+
+        p.add-category-new__icon.fa.fa-plus-square.fa-lg.js-add-income
+    .incomes-form.hidden
+      = form_for @category, url: category_index_path do |f|
+        .field
+          = f.text_field(:name)
+          = f.hidden_field :category_type, { :value => "income" }
+          = f.submit("#{t('.submit')}", class: "submit")
+
+    - @incomes.find_each do |income|
+      = render partial: 'categories/record', locals: {record: income}
+    .pagination-container
+      = paginate @incomes, param_name: :incomes_page

@@ -16,6 +16,12 @@
   &__icon {
     margin: 0;
     cursor: pointer;
+    color: black;
+  }
+  &__icon:hover {
+    text-decoration: none;
+    color: black;
+
   }
 }
 
@@ -71,3 +77,13 @@
   display: flex;
   justify-content: center;
 }
+
+.field {
+  margin: 0 0 0 10px;
+  input {
+    margin: 0 0 0 10px;
+    border-radius: 10px;
+  }
+}
+
+

@@ -30,8 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  categories:
-    settings:
+  category:
+    index:
       payment_title: "Payments categories"
       add_new: "Add new"
       submit: "Add"

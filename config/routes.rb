@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   resources :category do
     collection do
-      get :settings
+      get :payments
     end
   end
 
-  root 'category#settings'
+  root 'category#index'
 
 end

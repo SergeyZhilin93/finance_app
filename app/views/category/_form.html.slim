@@ -1,0 +1,10 @@
+= form_for @category, url: category_path do |f|
+
+  .field
+    = f.label :name
+    = f.text_field :name
+
+  .actions
+    = f.submit 'Save'
+
+= link_to 'Back', category_index_path

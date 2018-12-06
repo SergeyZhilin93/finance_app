@@ -1,0 +1,14 @@
+h2 Create category
+
+.create-form
+  = form_for :category, url: category_index_path do |f|
+
+    .field
+      = f.label :new_name
+      = f.text_field :name
+      = f.hidden_field :category_type, value: params[:category_type]
+
+    .actions
+      = f.submit 'Save'
+
+= link_to 'Back', category_index_path

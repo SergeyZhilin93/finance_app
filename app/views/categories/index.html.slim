@@ -1,0 +1,26 @@
+.settings-container
+  .payments
+    .add-category
+      p = t('.payment_title')
+      .add-category-new
+        p.add-category-new__title = t('.add_new')
+
+        = link_to '', new_category_path(category_type: :payment), class: 'add-category-new__icon fa fa-plus-square fa-lg js-add-payment'
+
+    - @payments.find_each do |payment|
+      = render partial: 'record', locals: { record: payment }
+    .pagination-container
+      = paginate @payments, param_name: :payments_page
+
+  .incomes
+    .add-category
+      p = t('.income_title')
+      .add-category-new
+        p.add-category-new__title = t('.add_new')
+
+        = link_to '', new_category_path(category_type: :income), class: 'add-category-new__icon fa fa-plus-square fa-lg js-add-income'
+
+    - @incomes.find_each do |income|
+      = render partial: 'record', locals: {record: income}
+    .pagination-container
+      = paginate @incomes, param_name: :incomes_page

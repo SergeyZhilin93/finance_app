@@ -30,15 +30,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  category:
+  categories:
     index:
       payment_title: "Payments categories"
       add_new: "Add new"
-      submit: "Add"
       income_title: "Incomes categories"
     record:
-      button: "Create"
       confirm: "Are you sure?"
+    edit:
+      title: "Edit category"
+    new:
+      title: "Create category"
+      submit: "Save"
+      link: "Back"
+    form:
+      submit: "Save"
+      link: "Back"
+  error: "Missing name"
+  create: "Record successfully created"
+  update: "Record successfully changed"
 
 
 

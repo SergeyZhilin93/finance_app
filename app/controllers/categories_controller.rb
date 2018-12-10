@@ -1,5 +1,4 @@
-class CategoryController < ApplicationController
-
+class CategoriesController < ApplicationController
   before_action :set_category, only: %i[edit show update destroy]
 
   def index
@@ -18,17 +17,24 @@ class CategoryController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to category_index_path }
+        flash[:success] = t(:create)
+        format.html { redirect_to categories_path }
       else
+        flash.now[:error] = t(:error)
         format.html { render :new }
       end
     end
   end
 
   def update
-    @category.update_attributes(category_params)
-    @category.save
-    redirect_to root_path
+    @category.assign_attributes(category_params)
+    if @category.save
+      flash[:success] = t(:update)
+      redirect_to root_path
+    else
+      flash.now[:error] = t(:error)
+      render :edit
+    end
   end
 
   def destroy

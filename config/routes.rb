@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :category do
+  resources :categories do
     collection do
       get :payments
     end
   end
 
-  root 'category#index'
+  root 'categories#index'
 
 end

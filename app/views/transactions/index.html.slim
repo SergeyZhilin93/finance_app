@@ -1,0 +1,12 @@
+.payments-container
+  = form_for @transaction, remote: true do |f|
+    .field-select
+      = f.select :category_id, options_from_collection_for_select(@payment_categories, 'id', 'name'), { prompt: t('.select') }, class: "payment-select"
+    .field-payments
+      = f.number_field :amount, step: 0.01
+    .action-payments
+      = f.submit t('.submit'), class: "submit-payment", remote: true
+
+  p.title-payment = t('.title')
+  table.trans-list
+    = render @transactions

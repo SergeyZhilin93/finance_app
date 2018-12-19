@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :transactions do
+    collection do
+      get :payments
+    end
+  end
+
   root 'categories#index'
 
 end

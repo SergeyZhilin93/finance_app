@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_11_22_084854) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.float "amount"
+    t.decimal "amount", precision: 8, scale: 2
     t.string "type"
     t.bigint "category_id"
     t.datetime "created_at", null: false

@@ -49,6 +49,10 @@ en:
   error: "Missing name"
   create: "Record successfully created"
   update: "Record successfully changed"
-
+  transactions:
+    index:
+      title: "Previous payments:"
+      submit: "Add Payment"
+      select: "Payment Category"
 
 

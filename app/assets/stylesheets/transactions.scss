@@ -1,0 +1,56 @@
+.payments-container {
+  margin: 20px auto;
+  max-width: 450px;
+  .field-select {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.payment-select {
+  display: flex;
+  margin: auto;
+  padding: 5px 90px;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.field-payments {
+  display: flex;
+  justify-content: center;
+  margin: 20 0 0 0;
+  input {
+    width: 335px;
+  }
+}
+
+.submit-payment {
+  display: flex;
+  margin: 20px auto;
+  padding: 3px 118px;
+  border-radius: 5px;
+}
+.title-payment {
+  margin: 50px 0 0 55px;
+}
+
+.trans-list {
+  margin: 20px 0 0 55px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-spacing: 7px 5px;
+ }
+ td {
+  border: 1px;
+  padding: 5px;
+ }
+ .fa.fa-dot-circle-o:before {
+  margin-right: 5px;
+ }
+ .table-amount:before {
+  content: '$';
+  margin-right: 2px;
+ }

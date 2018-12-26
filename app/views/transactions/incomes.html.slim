@@ -1,0 +1,13 @@
+= render 'layouts/navbar'
+.incomes-container
+  = form_for @transaction, remote: true do |f|
+    .field-select
+      = f.select :category_id, options_from_collection_for_select(@income_categories, 'id', 'name'), { prompt: t('.select') }, class: "income-select"
+    .field-incomes
+      = f.number_field :amount, step: 0.01
+    .action-incomes
+      = f.submit t('.submit'), class: "submit-income", remote: true
+
+  p.title-income = t('.title')
+  table.trans-list
+   = render @transactions

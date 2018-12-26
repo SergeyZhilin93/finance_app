@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :transactions do
     collection do
       get :payments
+      get :incomes
     end
   end
 

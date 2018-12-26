@@ -50,9 +50,15 @@ en:
   create: "Record successfully created"
   update: "Record successfully changed"
   transactions:
-    index:
+    payments:
       title: "Previous payments:"
       submit: "Add Payment"
       select: "Payment Category"
-
-
+    incomes:
+      title: "Previous payments:"
+      submit: "Add Payment"
+      select: "Payment Category"
+  payment: "Payments"
+  income: "Incomes"
+  chart: "Charts"
+  setting: "Settings"

@@ -189,6 +189,8 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    simple-navigation (4.0.5)
+      activesupport (>= 2.3.2)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -250,6 +252,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   select2-rails
   selenium-webdriver
+  simple-navigation
   slim-rails (~> 3.1, >= 3.1.1)
   spring
   spring-watcher-listen (~> 2.0.0)

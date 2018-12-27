@@ -1,0 +1,66 @@
+.navbar {
+  margin: 20px 0;
+  & > div {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #000;
+      & > a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        position: relative;
+      }
+  }
+}
+
+.selected {
+  background: #fff;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  background-color: #ccc;
+  position: relative;
+  text-align: center;
+}
+
+.selected:first-child {
+  border-left: none;
+}
+
+.selected:last-child {
+  border-right: none;
+}
+
+/* this CS forms the triangles */
+.selected:after,
+.selected:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+
+/* this border color controlls the color of the triangle (what looks like the fill of the triangle) */
+.selected:after {
+  top: 97%;
+  border-color: #ccc transparent transparent transparent;
+  border-width: 12px;
+}
+
+/* this border color controlls the outside, thin border */
+.selected:before {
+  top: 100%;
+  border-color: #000 transparent transparent transparent;
+  border-width: 13px;
+}
